@@ -930,93 +930,58 @@ def print_perf(label, elapsed, value=None):
 
 
 def main():
-    """Main execution function - following Andrew's implementation"""
+    """Main execution function"""
+    print('Calculating GitHub statistics...')
+    print('Execution times:')
     
-    # Configuration
-    GITHUB_USERNAME = os.getenv("GITHUB_USERNAME", "YOUR_USERNAME")
-    GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "YOUR_TOKEN")
+    # Get user data and account creation date
+    user_data, user_time = perf_counter(user_getter, USER_NAME)
+    global OWNER_ID
+    OWNER_ID, acc_date = user_data
+    formatter('account data', user_time)
     
-    # Set your birthdate for age calculation
-    BIRTHDATE = datetime(2002, 7, 5)  # Example: Change to your birthdate
+    # Calculate account age (you can customize this to your birthdate or keep it as account age)
+    acc_datetime = datetime.datetime.strptime(acc_date, '%Y-%m-%dT%H:%M:%SZ')
+    age_data, age_time = perf_counter(daily_readme, acc_datetime)
+    formatter('age calculation', age_time)
     
-    # Initialize collector
-    collector = GitHubStatsCollector(GITHUB_USERNAME, GITHUB_TOKEN, BIRTHDATE)
+    # Get lines of code statistics (with caching)
+    total_loc, loc_time = perf_counter(loc_query, ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 0)
+    formatter('LOC (cached)' if total_loc[-1] else 'LOC (no cache)', loc_time)
     
-    print("=" * 60)
-    print("GitHub Statistics Collector")
-    print("=" * 60)
-    print("\nCalculation times:")
+    # Get commit count
+    commit_data, commit_time = perf_counter(commit_counter, 0)
+    formatter('commits', commit_time)
     
-    # Get user info (needed for owner_id)
-    user_id, created_at = collector.get_user_info()
-    print(f"   User: {GITHUB_USERNAME} (ID: {user_id[:20]}...)")
-    print(f"   Account created: {created_at}")
+    # Get stars, repos, and contributions
+    star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])
+    formatter('stars', star_time)
     
-    # Calculate age
-    age_result, age_time = perf_counter(collector.calculate_coding_age)
-    print_perf("Age calculation", age_time, age_result)
+    repo_data, repo_time = perf_counter(graph_repos_stars, 'repos', ['OWNER'])
+    formatter('repositories', repo_time)
     
-    # Get repos and stars (owned)
-    (repo_count, star_count), repo_time = perf_counter(
-        collector.get_repo_count_and_stars, ['OWNER']
-    )
-    print_perf("Repos & stars", repo_time, f"{repo_count} repos, {star_count} stars")
+    contrib_data, contrib_time = perf_counter(graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])
+    formatter('contributions', contrib_time)
     
-    # Get contributed repos
-    (contrib_count, _), contrib_time = perf_counter(
-        collector.get_repo_count_and_stars,
-        ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER']
-    )
-    print_perf("Contributed repos", contrib_time, contrib_count)
+    # Get follower count
+    follower_data, follower_time = perf_counter(follower_getter, USER_NAME)
+    formatter('followers', follower_time)
     
-    # Get followers
-    followers, follower_time = perf_counter(collector.get_followers)
-    print_perf("Followers", follower_time, followers)
-    
-    # Calculate LOC (this takes longest due to caching system)
-    print("\n" + "-" * 60)
-    loc_result, loc_time = perf_counter(
-        collector.calculate_total_loc,
-        ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'],
-        1,  # comment lines in cache
-        False  # force_refresh
-    )
-    print("-" * 60)
-    
-    cache_status = "cached" if loc_result['cached'] else "no cache"
-    print_perf(f"LOC ({cache_status})", loc_time)
-    print(f"\n   Total commits: {loc_result['commits']:,}")
-    print(f"   Additions: {loc_result['additions']:,}++")
-    print(f"   Deletions: {loc_result['deletions']:,}--")
-    print(f"   Net LOC: {loc_result['net']:,}")
-    
-    # Prepare stats dictionary for SVG update
-    stats = {
-        'age': age_result,
-        'commits': loc_result['commits'],
-        'stars': star_count,
-        'repos': repo_count,
-        'contributed_repos': contrib_count,
-        'followers': followers,
-        'loc_net': loc_result['net'],
-        'loc_add': loc_result['additions'],
-        'loc_del': loc_result['deletions']
-    }
+    # Format LOC data
+    for index in range(len(total_loc) - 1):
+        total_loc[index] = '{:,}'.format(total_loc[index])
     
     # Update both SVG files
-    print("\n" + "=" * 60)
-    print("Updating SVG files...")
-    print("=" * 60)
+    svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, 
+                 contrib_data, follower_data, total_loc[:-1])
+    svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, 
+                 contrib_data, follower_data, total_loc[:-1])
     
-    for svg_file in ['dark_mode.svg', 'light_mode.svg']:
-        if os.path.exists(svg_file):
-            collector.update_svg(svg_file, stats)
-        else:
-            print(f"⚠ {svg_file} not found")
-    
-    print("\n" + "=" * 60)
-    print("✓ Done!")
-    print("=" * 60)
+    print('\n✓ SVG files updated successfully!')
+    print(f'\nTotal GitHub GraphQL API calls: {sum(QUERY_COUNT.values())}')
+    for funct_name, count in QUERY_COUNT.items():
+        if count > 0:
+            print(f'   {funct_name}: {count}')
 
 
 if __name__ == "__main__":
