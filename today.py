@@ -464,29 +464,6 @@ if __name__ == '__main__':
     for funct_name, count in QUERY_COUNT.items():
         if count > 0:
             print(f'   {funct_name}: {count}')
-        """
-        Calculate coding age from birthdate in Andrew's format
-        
-        Returns:
-            str: Formatted age string like "22 years, 5 months, 29 days"
-        """
-        if not self.birthdate:
-            return None
-        
-        now = datetime.now()
-        delta = relativedelta(now, self.birthdate)
-        
-        # Format with proper pluralization
-        def pluralize(num, unit):
-            return f"{num} {unit}{'s' if num != 1 else ''}"
-        
-        age_str = f"{pluralize(delta.years, 'year')}, {pluralize(delta.months, 'month')}, {pluralize(delta.days, 'day')}"
-        
-        # Add birthday cake if it's their birthday
-        if delta.months == 0 and delta.days == 0:
-            age_str += " 🎂"
-        
-        return age_str
     
     def get_repo_count_and_stars(self, owner_affiliation=['OWNER']):
         """
