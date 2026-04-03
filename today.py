@@ -388,7 +388,7 @@ def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib
 def justify_format(root, element_id, new_text, length=0):
     """Format and justify text in SVG elements with dots"""
     if isinstance(new_text, int):
-        new_text = f"{'{:,}'.format(new_text)}"
+        new_text = f"{new_text:,}"
     new_text = str(new_text)
     
     find_and_replace(root, element_id, new_text)
@@ -464,8 +464,6 @@ if __name__ == '__main__':
     for funct_name, count in QUERY_COUNT.items():
         if count > 0:
             print(f'   {funct_name}: {count}')
-    
-    def calculate_coding_age(self):
         """
         Calculate coding age from birthdate in Andrew's format
         
