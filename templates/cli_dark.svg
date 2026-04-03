@@ -1,42 +1,85 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="350" viewBox="0 0 800 350">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#0d1117"/>
       <stop offset="100%" style="stop-color:#010409"/>
     </linearGradient>
+    <mask id="typing-echo" maskUnits="userSpaceOnUse">
+      <rect x="45" y="57" width="0" height="18" fill="white">
+        <animate attributeName="width" values="0;9;18;27;36;45;54;63;72;81;90;99;108;117" dur="2.2s" repeatCount="indefinite" calcMode="discrete" />
+      </rect>
+    </mask>
   </defs>
 
-  <rect width="800" height="350" fill="url(#bg)" rx="10" />
-  <rect x="0.5" y="0.5" width="799" height="349" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+  <rect width="900" height="500" fill="url(#bg)" rx="10" />
+  <rect x="0.5" y="0.5" width="899" height="499" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
 
-  <path d="M0 10C0 4.47715 4.47715 0 10 0H790C795.523 0 800 4.47715 800 10V35H0V10Z" fill="#161b22"/>
+  <path d="M0 10C0 4.47715 4.47715 0 10 0H890C895.523 0 900 4.47715 900 10V35H0V10Z" fill="#161b22"/>
   
-  <text x="400" y="22" font-family="Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">anirudw — zsh — 80×24</text>
+  <text x="450" y="22" font-family="Consolas, monospace" font-size="12" fill="#8b949e" text-anchor="middle">anirudw — zsh — 80×24</text>
 
-  <g font-family="Consolas, 'Courier New', monospace" font-size="14">
-    
+  <text x="25" y="70" font-family="Consolas, 'Courier New', monospace" font-size="14" fill="#58a6ff" font-weight="bold">❯</text>
+  <text x="45" y="70" font-family="Consolas, 'Courier New', monospace" font-size="14" fill="#c9d1d9" mask="url(#typing-echo)">
+    <tspan fill="#d2a8ff">echo</tspan><tspan fill="#8b949e"> </tspan><tspan fill="#7ee787">anirudh</tspan>
+  </text>
+
+  <g transform="translate(0,25)" font-family="Consolas, 'Courier New', monospace" font-size="14">
     <text x="25" y="70" fill="#58a6ff" font-weight="bold">❯</text>
-    <text x="45" y="70" fill="#c9d1d9">whoami</text>
-    
+    <text x="45" y="70" fill="#58a6ff">whoami</text>
+
     <text x="45" y="95" fill="#8b949e">Computer Science student at CET, Kerala.</text>
     <text x="45" y="115" fill="#8b949e">Data Science | Machine Learning | Open Source</text>
 
-    <text x="25" y="155" fill="#58a6ff" font-weight="bold">❯</text>
-    <text x="45" y="155" fill="#c9d1d9">fetch-stats --github</text>
+    <text x="25" y="149" fill="#58a6ff" font-weight="bold">❯</text>
+    <text x="45" y="149" fill="#c9d1d9">
+      <tspan fill="#7ee787">fetch-stats</tspan><tspan fill="#8b949e"> --github</tspan>
+    </text>
 
-    <g transform="translate(45, 185)">
-      <text x="0" y="0" fill="#c9d1d9">Commits:</text>
-      <text id="stat_commits" x="120" y="0" fill="#ff7b72" font-weight="bold">---</text>
-      
-      <text x="0" y="25" fill="#c9d1d9">Repositories:</text>
-      <text id="stat_repos" x="120" y="25" fill="#f2cc60" font-weight="bold">---</text>
-      
-      <text x="0" y="50" fill="#c9d1d9">Stars earned:</text>
-      <text id="stat_stars" x="120" y="50" fill="#79c0ff" font-weight="bold">---</text>
-    </g>
+    <text x="45" y="176" fill="#8b949e">commits: </text>
+    <text id="commits" x="220" y="176" fill="#ff7b72" font-weight="bold">---</text>
+    <text x="45" y="199" fill="#8b949e">repositories: </text>
+    <text id="repos" x="220" y="199" fill="#f2cc60" font-weight="bold">---</text>
+    <text x="45" y="222" fill="#8b949e">stars: </text>
+    <text id="stars" x="220" y="222" fill="#79c0ff" font-weight="bold">---</text>
 
-    <text x="25" y="285" fill="#58a6ff" font-weight="bold">❯</text>
-    <rect x="45" y="272" width="8" height="16" fill="#c9d1d9">
+    <text x="25" y="248" fill="#58a6ff" font-weight="bold">❯</text>
+    <text x="45" y="248" fill="#c9d1d9">
+      <tspan fill="#d2a8ff">stack</tspan><tspan fill="#8b949e"> --skills</tspan>
+    </text>
+    <text x="45" y="275" fill="#8b949e">
+      <tspan fill="#58a6ff">datascience/ml:</tspan>
+      <tspan fill="#c9d1d9"> Python, </tspan>
+      <tspan fill="#7ee787">Pandas</tspan>
+      <tspan fill="#c9d1d9">, </tspan>
+      <tspan fill="#79c0ff">NumPy</tspan>
+      <tspan fill="#c9d1d9">, </tspan>
+      <tspan fill="#d2a8ff">scikit-learn</tspan>
+      
+    </text>
+
+    <text x="45" y="298" fill="#8b949e">
+      <tspan fill="#58a6ff">frontend:</tspan>
+      <tspan fill="#c9d1d9"> JavaScript, </tspan>
+      <tspan fill="#d2a8ff">React</tspan>
+    </text>
+    <text x="45" y="321" fill="#8b949e">
+      <tspan fill="#58a6ff">tools:</tspan>
+      <tspan fill="#c9d1d9"> Git, </tspan>
+      <tspan fill="#7ee787">Linux</tspan>
+      <tspan fill="#c9d1d9">, </tspan>
+      <tspan fill="#f2cc60">Figma</tspan>
+    </text>
+
+    <text x="25" y="380" fill="#58a6ff" font-weight="bold">❯</text>
+    <text x="45" y="380" fill="#c9d1d9">
+      <tspan fill="#ff7b72">connect</tspan><tspan fill="#8b949e"> --contacts</tspan>
+    </text>
+
+    <text x="45" y="407" fill="#8b949e">github: https://github.com/anirudw</text>
+    <text x="45" y="430" fill="#8b949e">linkedin: https://linkedin.com/in/anirudh-s-nair</text>
+
+    <text x="25" y="455" fill="#58a6ff" font-weight="bold">❯</text>
+    <rect x="45" y="442" width="8" height="16" fill="#c9d1d9">
       <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
     </rect>
 
