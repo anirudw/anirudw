@@ -23,7 +23,7 @@ jobs:
       
       - name: Update profile SVG
         env:
-          GITHUB_TOKEN: ${{ secrets.CLI_PROFILE_UPDATER }}
+          GITHUB_TOKEN: ${{ secrets.PROFILE_UPDATE }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_USERNAME: ${{ vars.GITHUB_USERNAME }}
         run: python update_profile.py

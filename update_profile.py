@@ -3,7 +3,7 @@ import re
 import requests
 from lxml import etree
 
-GITHUB_TOKEN = os.environ.get("CLI_PROFILE_UPDATER")
+GITHUB_TOKEN = os.environ.get("PROFILE_UPDATE")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 GITHUB_USERNAME = os.environ.get("GITHUB_USERNAME", "anirudw")
 GEMINI_MODEL = "gemini-2.0-flash"
