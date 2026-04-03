@@ -23,7 +23,7 @@ jobs:
       
       - name: Update profile SVG
         env:
-          GITHUB_TOKEN: ${{ secrets.PROFILE_UPDATE }}
+          PROFILE_README_TOKEN: ${{ secrets.PROFILE_README_TOKEN }}
           GITHUB_USERNAME: ${{ vars.GITHUB_USERNAME }}
         run: python update_profile.py
       
