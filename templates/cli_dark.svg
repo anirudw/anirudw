@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="660" viewBox="0 0 900 660">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#0d1117"/>
@@ -12,8 +12,8 @@
     </mask>
   </defs>
 
-  <rect width="900" height="500" fill="url(#bg)" rx="10"/>
-  <rect x="0.5" y="0.5" width="899" height="499" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+  <rect width="900" height="660" fill="url(#bg)" rx="10"/>
+  <rect x="0.5" y="0.5" width="899" height="659" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
 
   <path d="M0 10C0 4.47715 4.47715 0 10 0H890C895.523 0 900 4.47715 900 10V35H0V10Z" fill="#161b22"/>
   
@@ -71,16 +71,58 @@
       <tspan fill="#f2cc60">Figma</tspan>
     </text>
 
-    <text x="25" y="380" fill="#58a6ff" font-weight="bold">❯</text>
-    <text x="45" y="380" fill="#c9d1d9">
+    <text x="25" y="370" fill="#58a6ff" font-weight="bold">❯</text>
+    <text x="45" y="370" fill="#c9d1d9"><tspan fill="#79c0ff">top</tspan><tspan fill="#8b949e"> --sort-by "usage" -n 5</tspan></text>
+    
+    <text x="45" y="395" fill="#8b949e" font-size="12" text-decoration="underline">LANG</text>
+    <text x="180" y="395" fill="#8b949e" font-size="12" text-decoration="underline">USAGE</text>
+    <text x="400" y="395" fill="#8b949e" font-size="12" text-decoration="underline">PCT</text>
+
+    <text id="lang_name_0" x="45" y="415" fill="#c9d1d9" font-size="12">TypeScript</text>
+    <text x="170" y="415" fill="#8b949e" font-size="12">[</text>
+    <rect x="180" y="407" width="200" height="8" fill="#161b22" rx="0"/>
+    <rect id="lang_bar_0" x="180" y="407" width="119" height="8" fill="#58a6ff" rx="0"/>
+    <text x="385" y="415" fill="#8b949e" font-size="12">]</text>
+    <text id="lang_pct_0" x="400" y="415" fill="#58a6ff" font-size="12">59.9%</text>
+
+    <text id="lang_name_1" x="45" y="435" fill="#c9d1d9" font-size="12">JavaScript</text>
+    <text x="170" y="435" fill="#8b949e" font-size="12">[</text>
+    <rect x="180" y="427" width="200" height="8" fill="#161b22" rx="0"/>
+    <rect id="lang_bar_1" x="180" y="427" width="39" height="8" fill="#d2a8ff" rx="0"/>
+    <text x="385" y="435" fill="#8b949e" font-size="12">]</text>
+    <text id="lang_pct_1" x="400" y="435" fill="#d2a8ff" font-size="12">19.7%</text>
+
+    <text id="lang_name_2" x="45" y="455" fill="#c9d1d9" font-size="12">CSS</text>
+    <text x="170" y="455" fill="#8b949e" font-size="12">[</text>
+    <rect x="180" y="447" width="200" height="8" fill="#161b22" rx="0"/>
+    <rect id="lang_bar_2" x="180" y="447" width="26" height="8" fill="#f2cc60" rx="0"/>
+    <text x="385" y="455" fill="#8b949e" font-size="12">]</text>
+    <text id="lang_pct_2" x="400" y="455" fill="#f2cc60" font-size="12">13.4%</text>
+
+    <text id="lang_name_3" x="45" y="475" fill="#c9d1d9" font-size="12">HTML</text>
+    <text x="170" y="475" fill="#8b949e" font-size="12">[</text>
+    <rect x="180" y="467" width="200" height="8" fill="#161b22" rx="0"/>
+    <rect id="lang_bar_3" x="180" y="467" width="4" height="8" fill="#ff7b72" rx="0"/>
+    <text x="385" y="475" fill="#8b949e" font-size="12">]</text>
+    <text id="lang_pct_3" x="400" y="475" fill="#ff7b72" font-size="12">2.4%</text>
+
+    <text id="lang_name_4" x="45" y="495" fill="#c9d1d9" font-size="12">Python</text>
+    <text x="170" y="495" fill="#8b949e" font-size="12">[</text>
+    <rect x="180" y="487" width="200" height="8" fill="#161b22" rx="0"/>
+    <rect id="lang_bar_4" x="180" y="487" width="3" height="8" fill="#27c93f" rx="0"/>
+    <text x="385" y="495" fill="#8b949e" font-size="12">]</text>
+    <text id="lang_pct_4" x="400" y="495" fill="#27c93f" font-size="12">1.8%</text>
+
+    <text x="25" y="544" fill="#58a6ff" font-weight="bold">❯</text>
+    <text x="45" y="544" fill="#c9d1d9">
       <tspan fill="#ff7b72">connect</tspan><tspan fill="#8b949e"> --contacts</tspan>
     </text>
 
-    <text x="45" y="407" fill="#8b949e">github: https://github.com/anirudw</text>
-    <text x="45" y="430" fill="#8b949e">linkedin: https://linkedin.com/in/anirudh-s-nair</text>
+    <text x="45" y="571" fill="#8b949e">github: https://github.com/anirudw</text>
+    <text x="45" y="594" fill="#8b949e">linkedin: https://linkedin.com/in/anirudh-s-nair</text>
 
-    <text x="25" y="455" fill="#58a6ff" font-weight="bold">❯</text>
-    <rect x="45" y="442" width="8" height="16" fill="#c9d1d9">
+    <text x="25" y="619" fill="#58a6ff" font-weight="bold">❯</text>
+    <rect x="45" y="606" width="8" height="16" fill="#c9d1d9">
       <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
     </rect>
 
