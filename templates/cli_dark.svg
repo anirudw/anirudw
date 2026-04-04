@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -6,12 +7,12 @@
     </linearGradient>
     <mask id="typing-echo" maskUnits="userSpaceOnUse">
       <rect x="45" y="57" width="0" height="18" fill="white">
-        <animate attributeName="width" values="0;9;18;27;36;45;54;63;72;81;90;99;108;117" dur="2.2s" repeatCount="indefinite" calcMode="discrete" />
+        <animate attributeName="width" values="0;9;18;27;36;45;54;63;72;81;90;99;108;117" dur="2.2s" repeatCount="indefinite" calcMode="discrete"/>
       </rect>
     </mask>
   </defs>
 
-  <rect width="900" height="500" fill="url(#bg)" rx="10" />
+  <rect width="900" height="500" fill="url(#bg)" rx="10"/>
   <rect x="0.5" y="0.5" width="899" height="499" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
 
   <path d="M0 10C0 4.47715 4.47715 0 10 0H890C895.523 0 900 4.47715 900 10V35H0V10Z" fill="#161b22"/>
@@ -36,11 +37,11 @@
     </text>
 
     <text x="45" y="176" fill="#8b949e">commits: </text>
-    <text id="commits" x="220" y="176" fill="#ff7b72" font-weight="bold">---</text>
+    <text id="commits" x="220" y="176" fill="#ff7b72" font-weight="bold">81</text>
     <text x="45" y="199" fill="#8b949e">repositories: </text>
-    <text id="repos" x="220" y="199" fill="#f2cc60" font-weight="bold">---</text>
+    <text id="repos" x="220" y="199" fill="#f2cc60" font-weight="bold">31</text>
     <text x="45" y="222" fill="#8b949e">stars: </text>
-    <text id="stars" x="220" y="222" fill="#79c0ff" font-weight="bold">---</text>
+    <text id="stars" x="220" y="222" fill="#79c0ff" font-weight="bold">3</text>
 
     <text x="25" y="248" fill="#58a6ff" font-weight="bold">❯</text>
     <text x="45" y="248" fill="#c9d1d9">
