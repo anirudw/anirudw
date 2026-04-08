@@ -28,7 +28,7 @@
     <text x="45" y="70" fill="#0969da">whoami</text>
 
     <text x="45" y="95" fill="#57606a">Computer Science student at CET, Kerala.</text>
-    <text x="45" y="115" fill="#57606a">Data Science | Machine Learning | Open Source</text>
+    <text x="45" y="115" fill="#57606a">Data Science | Machine Learning | CLI Tools</text>
 
     <text x="25" y="149" fill="#0969da" font-weight="bold">❯</text>
     <text x="45" y="149" fill="#24292f">
@@ -48,19 +48,21 @@
     </text>
     <text x="45" y="275" fill="#57606a">
       <tspan fill="#0969da">datascience/ml:</tspan>
-      <tspan fill="#24292f"> Python, </tspan>
-      <tspan fill="#1a7f37">Pandas</tspan>
+      <tspan fill="#24292f"> Pandas, </tspan>
+      <tspan fill="#1a7f37">NumPy</tspan>
       <tspan fill="#24292f">, </tspan>
-      <tspan fill="#0969da">NumPy</tspan>
+      <tspan fill="#0969da">scikit-learn</tspan>
       <tspan fill="#24292f">, </tspan>
-      <tspan fill="#8250df">scikit-learn</tspan>
+      <tspan fill="#8250df">OpenEnv</tspan>
       
     </text>
 
     <text x="45" y="298" fill="#57606a">
-      <tspan fill="#0969da">frontend:</tspan>
-      <tspan fill="#24292f"> JavaScript, </tspan>
-      <tspan fill="#8250df">React</tspan>
+      <tspan fill="#0969da">languages:</tspan>
+      <tspan fill="#d8bb15"> Python, </tspan>
+      <tspan fill="#7394df">Java, </tspan>
+      <tspan fill="#8250df">C, </tspan>
+      <tspan fill="#1b7154">JavaScript, </tspan>
     </text>
     <text x="45" y="321" fill="#57606a">
       <tspan fill="#0969da">tools:</tspan>
