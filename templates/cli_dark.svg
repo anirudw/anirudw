@@ -39,7 +39,7 @@
     <text x="45" y="176" fill="#8b949e">commits: </text>
     <text id="commits" x="220" y="176" fill="#ff7b72" font-weight="bold">209</text>
     <text x="45" y="199" fill="#8b949e">repositories: </text>
-    <text id="repos" x="220" y="199" fill="#f2cc60" font-weight="bold">41</text>
+    <text id="repos" x="220" y="199" fill="#f2cc60" font-weight="bold">42</text>
     <text x="45" y="222" fill="#8b949e">stars: </text>
     <text id="stars" x="220" y="222" fill="#79c0ff" font-weight="bold">7</text>
 
@@ -92,7 +92,7 @@
     <rect x="180" y="427" width="200" height="8" fill="#161b22" rx="0"/>
     <rect id="lang_bar_1" x="180" y="427" width="33" height="8" fill="#d2a8ff" rx="0"/>
     <text x="385" y="435" fill="#8b949e" font-size="12">]</text>
-    <text id="lang_pct_1" x="400" y="435" fill="#d2a8ff" font-size="12">16.9%</text>
+    <text id="lang_pct_1" x="400" y="435" fill="#d2a8ff" font-size="12">17.0%</text>
 
     <text id="lang_name_2" x="45" y="455" fill="#c9d1d9" font-size="12">Jupyter Notebook</text>
     <text x="170" y="455" fill="#8b949e" font-size="12">[</text>
