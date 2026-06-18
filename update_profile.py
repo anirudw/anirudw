@@ -1,9 +1,9 @@
 import os
 import hashlib
 import re
+import xml.etree.ElementTree as ET
 
 import requests
-from lxml import etree
 
 GITHUB_TOKEN = (
   os.environ.get("GITHUB_TOKEN")
@@ -60,9 +60,9 @@ def get_github_stats():
   for repo in user_data["repositories"]["nodes"]:
       if repo.get("languages") and repo["languages"].get("edges"):
           for edge in repo["languages"]["edges"]:
-              name = edge["node"]["name"]
-              lang_counts[name] = lang_counts.get(name, 0) + edge["size"]
-              
+               name = edge["node"]["name"]
+               lang_counts[name] = lang_counts.get(name, 0) + edge["size"]
+               
   total_size = sum(lang_counts.values())
   top_langs = sorted(lang_counts.items(), key=lambda x: x[1], reverse=True)[:5]
   
@@ -74,24 +74,32 @@ def get_github_stats():
   return {"commits": commits, "repos": repos, "stars": stars}, languages
 
 
-# CHANGED: Added 'svg_path' parameter
+# CHANGED: Rewritten to use standard library xml.etree.ElementTree instead of lxml
 def update_svg(svg_path, stats, languages):
-    tree = etree.parse(svg_path)
+    ET.register_namespace('', 'http://www.w3.org/2000/svg')
+    tree = ET.parse(svg_path)
     root = tree.getroot()
     
-    for elem in root.iter():
-        if elem.get("id") == "commits":
-            elem.text = str(stats["commits"])
-        elif elem.get("id") == "repos":
-            elem.text = str(stats["repos"])
-        elif elem.get("id") == "stars":
-            elem.text = str(stats["stars"])
-            
-    # CHANGED: Added logic to map the 5 languages to the corresponding SVG IDs
+    # Build a lookup map of elements by ID for fast access without XPath
+    elem_map = {elem.get("id"): elem for elem in root.iter() if elem.get("id")}
+    
+    commits_elem = elem_map.get("commits")
+    if commits_elem is not None:
+        commits_elem.text = str(stats["commits"])
+        
+    repos_elem = elem_map.get("repos")
+    if repos_elem is not None:
+        repos_elem.text = str(stats["repos"])
+        
+    stars_elem = elem_map.get("stars")
+    if stars_elem is not None:
+        stars_elem.text = str(stats["stars"])
+        
+    # Map the 5 languages to the corresponding SVG IDs
     for i, lang in enumerate(languages):
-        name_elem = root.find(f".//*[@id='lang_name_{i}']")
-        pct_elem = root.find(f".//*[@id='lang_pct_{i}']")
-        bar_elem = root.find(f".//*[@id='lang_bar_{i}']")
+        name_elem = elem_map.get(f"lang_name_{i}")
+        pct_elem = elem_map.get(f"lang_pct_{i}")
+        bar_elem = elem_map.get(f"lang_bar_{i}")
         
         if name_elem is not None:
             name_elem.text = lang['name']
@@ -101,8 +109,7 @@ def update_svg(svg_path, stats, languages):
             # Multiplies by 2 because your max width for the bar in the SVG is 200px
             bar_elem.set("width", str(int(lang["percent"] * 2)))
     
-    with open(svg_path, "wb") as f:
-        f.write(etree.tostring(tree, pretty_print=True, xml_declaration=True, encoding="UTF-8"))
+    tree.write(svg_path, encoding="utf-8", xml_declaration=True)
 
 
 def calculate_file_hash(filepath):
