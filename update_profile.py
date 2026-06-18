@@ -1,4 +1,6 @@
 import os
+import hashlib
+import re
 
 import requests
 from lxml import etree
@@ -72,9 +74,8 @@ def get_github_stats():
   return {"commits": commits, "repos": repos, "stars": stars}, languages
 
 
-# CHANGED: Added 'languages' parameter
-def update_svg(stats, languages):
-    svg_path = "templates/cli_dark.svg"
+# CHANGED: Added 'svg_path' parameter
+def update_svg(svg_path, stats, languages):
     tree = etree.parse(svg_path)
     root = tree.getroot()
     
@@ -104,15 +105,47 @@ def update_svg(stats, languages):
         f.write(etree.tostring(tree, pretty_print=True, xml_declaration=True, encoding="UTF-8"))
 
 
+def calculate_file_hash(filepath):
+    if not os.path.exists(filepath):
+        return ""
+    hasher = hashlib.md5()
+    with open(filepath, 'rb') as f:
+        hasher.update(f.read())
+    return hasher.hexdigest()[:8]
+
+
+def update_readme_version(svg_hash):
+    readme_path = "README.md"
+    if not os.path.exists(readme_path):
+        return
+    with open(readme_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    
+    # Replace v=... with new svg_hash for both light and dark SVGs
+    new_content = re.sub(r'(cli_(?:dark|light)\.svg\?raw=1&amp;v=)[^"\s>]+', r'\g<1>' + svg_hash, content)
+    new_content = re.sub(r'(cli_(?:dark|light)\.svg\?raw=1&v=)[^"\s>]+', r'\g<1>' + svg_hash, new_content)
+    
+    if new_content != content:
+        with open(readme_path, "w", encoding="utf-8") as f:
+            f.write(new_content)
+        print(f"README.md cache-buster updated to v={svg_hash}")
+
+
 def main():
     # CHANGED: Unpack the new languages return variable
     stats, languages = get_github_stats()
     print(f"Stats: {stats}")
     print(f"Languages: {languages}")
 
-    # CHANGED: Pass languages into the update_svg function
-    update_svg(stats, languages)
-    print("SVG updated successfully!")
+    # CHANGED: Update both dark and light SVGs
+    update_svg("templates/cli_dark.svg", stats, languages)
+    update_svg("templates/cli_light.svg", stats, languages)
+    print("SVGs updated successfully!")
+
+    # CHANGED: Calculate hash of updated dark SVG to use as a cache buster
+    svg_hash = calculate_file_hash("templates/cli_dark.svg")
+    if svg_hash:
+        update_readme_version(svg_hash)
 
 
 if __name__ == "__main__":
