@@ -37,7 +37,7 @@
     </text>
 
     <text x="45" y="176" fill="#8b949e">commits: </text>
-    <text id="commits" x="220" y="176" fill="#ff7b72" font-weight="bold">212</text>
+    <text id="commits" x="220" y="176" fill="#ff7b72" font-weight="bold">213</text>
     <text x="45" y="199" fill="#8b949e">repositories: </text>
     <text id="repos" x="220" y="199" fill="#f2cc60" font-weight="bold">46</text>
     <text x="45" y="222" fill="#8b949e">stars: </text>
@@ -85,7 +85,7 @@
     <rect x="180" y="407" width="200" height="8" fill="#161b22" rx="0"/>
     <rect id="lang_bar_0" x="180" y="407" width="85" height="8" fill="#58a6ff" rx="0"/>
     <text x="385" y="415" fill="#8b949e" font-size="12">]</text>
-    <text id="lang_pct_0" x="400" y="415" fill="#58a6ff" font-size="12">42.9%</text>
+    <text id="lang_pct_0" x="400" y="415" fill="#58a6ff" font-size="12">42.8%</text>
 
     <text id="lang_name_1" x="45" y="435" fill="#c9d1d9" font-size="12">Python</text>
     <text x="170" y="435" fill="#8b949e" font-size="12">[</text>
