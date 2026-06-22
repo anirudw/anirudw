@@ -36,7 +36,7 @@
     </text>
 
     <text x="45" y="176" fill="#57606a">commits: </text>
-    <text id="commits" x="220" y="176" fill="#cf222e" font-weight="bold">214</text>
+    <text id="commits" x="220" y="176" fill="#cf222e" font-weight="bold">210</text>
     <text x="45" y="199" fill="#57606a">repositories: </text>
     <text id="repos" x="220" y="199" fill="#9a6700" font-weight="bold">46</text>
     <text x="45" y="222" fill="#57606a">stars: </text>
