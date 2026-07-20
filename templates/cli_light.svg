@@ -36,7 +36,7 @@
     </text>
 
     <text x="45" y="176" fill="#57606a">commits: </text>
-    <text id="commits" x="220" y="176" fill="#cf222e" font-weight="bold">327</text>
+    <text id="commits" x="220" y="176" fill="#cf222e" font-weight="bold">332</text>
     <text x="45" y="199" fill="#57606a">repositories: </text>
     <text id="repos" x="220" y="199" fill="#9a6700" font-weight="bold">51</text>
     <text x="45" y="222" fill="#57606a">stars: </text>
@@ -82,9 +82,9 @@
     <text id="lang_name_0" x="45" y="415" fill="#24292f" font-size="12">Python</text>
     <text x="170" y="415" fill="#57606a" font-size="12">[</text>
     <rect x="180" y="407" width="200" height="8" fill="#ebf0f4" rx="0" />
-    <rect id="lang_bar_0" x="180" y="407" width="180" height="8" fill="#0969da" rx="0" />
+    <rect id="lang_bar_0" x="180" y="407" width="179" height="8" fill="#0969da" rx="0" />
     <text x="385" y="415" fill="#57606a" font-size="12">]</text>
-    <text id="lang_pct_0" x="400" y="415" fill="#0969da" font-size="12">90.1%</text>
+    <text id="lang_pct_0" x="400" y="415" fill="#0969da" font-size="12">90.0%</text>
 
     <text id="lang_name_1" x="45" y="435" fill="#24292f" font-size="12">TypeScript</text>
     <text x="170" y="435" fill="#57606a" font-size="12">[</text>
