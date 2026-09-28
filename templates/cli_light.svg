@@ -84,14 +84,14 @@
     <rect x="180" y="407" width="200" height="8" fill="#ebf0f4" rx="0" />
     <rect id="lang_bar_0" x="180" y="407" width="158" height="8" fill="#0969da" rx="0" />
     <text x="385" y="415" fill="#57606a" font-size="12">]</text>
-    <text id="lang_pct_0" x="400" y="415" fill="#0969da" font-size="12">79.2%</text>
+    <text id="lang_pct_0" x="400" y="415" fill="#0969da" font-size="12">79.3%</text>
 
     <text id="lang_name_1" x="45" y="435" fill="#24292f" font-size="12">Jupyter Notebook</text>
     <text x="170" y="435" fill="#57606a" font-size="12">[</text>
     <rect x="180" y="427" width="200" height="8" fill="#ebf0f4" rx="0" />
     <rect id="lang_bar_1" x="180" y="427" width="24" height="8" fill="#8250df" rx="0" />
     <text x="385" y="435" fill="#57606a" font-size="12">]</text>
-    <text id="lang_pct_1" x="400" y="435" fill="#8250df" font-size="12">12.4%</text>
+    <text id="lang_pct_1" x="400" y="435" fill="#8250df" font-size="12">12.3%</text>
 
     <text id="lang_name_2" x="45" y="455" fill="#24292f" font-size="12">TypeScript</text>
     <text x="170" y="455" fill="#57606a" font-size="12">[</text>
