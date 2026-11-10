@@ -2,11 +2,11 @@
 
 Hello! I am Anirudh, CSE undergrad at College of Engineering, Trivandrum. 
 
-I love engineering good software, and a strong believer that simple software is, more often than not, better software. I also take interest in machine learning, exploring systems beyond Large Language Model applications.
+I love engineering good software - and I am a strong believer that a simple software is, more often than not, a better software. I also take interest in machine learning, exploring systems beyond Large Language Model applications.
 
-I have been working on developing retail solutions [@UST](https://www.ust.com/) as an intern, harnessing various domains of AI/ML. 
+Past few months I have been developing retail solutions [@UST](https://www.ust.com/) as an intern, working on  various domains of AI/ML. 
 
-## Catalogue of my projects:
+## A catalogue of my projects:
 
 
 1. [rveda](https://github.com/anirudw/rveda.git) 
