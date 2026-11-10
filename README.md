@@ -38,4 +38,4 @@ Beyond the projects listed above, I have translated several ideas of mine into c
 
 ## Find me on:
 
-[E-Mail](mailto:anirudhscodes@gmail.com) · [LinkedIn](https://linkedin.com/in/anirudh-s-nair) · [GitHub](https://github.com/anirudw)
+[E-Mail](mailto:anirudhscodes@gmail.com) · [LinkedIn](https://linkedin.com/in/anirudh-s-nair) · [GitHub](https://github.com/anirudw) · [X](https://x.com/anirudw)   
