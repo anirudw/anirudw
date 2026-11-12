@@ -2,12 +2,14 @@
 
 Hello! I am Anirudh, CSE undergrad at College of Engineering, Trivandrum. 
 
-I love engineering good software - and I am a strong believer that a simple software is, more often than not, a better software. I also take interest in machine learning, exploring systems beyond Large Language Model applications.
+I love engineering good software - and I'm a strong believer that a simpler software is, more often than not, the better software. I also take interest in machine learning, exploring systems beyond Large Language Model applications.
 
-Past few months I have been developing retail solutions [@UST](https://www.ust.com/) as an intern, working on  various domains of AI/ML. 
+## Currently working on:
 
-## A catalogue of my projects:
+- Developing retail solutions [@UST](https://www.ust.com/) as an intern, working on various domains of AI/ML to solve real retail problems. 
+- Writing backend for [frible-server](https://github.com/anirudw/frible-server.git) in go. It is the server side for my group ride telemetry application dubbed frible.
 
+## Catalogue of my projects:
 
 1. [rveda](https://github.com/anirudw/rveda.git) 
     
@@ -34,7 +36,7 @@ Beyond the projects listed above, I have translated several ideas of mine into c
 
 ### Resources:
 
-- Find my machine learning notes, that I have maintained: [here](https://github.com/anirudw/machine-learning-notes.git)
+- Find my machine learning notes, that I have maintained [here](https://github.com/anirudw/machine-learning-notes.git)
 
 ## Find me on:
 
