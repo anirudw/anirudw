@@ -7,7 +7,6 @@ I love engineering good software - and I'm a strong believer that a simpler soft
 ## Currently working on:
 
 - Developing retail solutions [@UST](https://www.ust.com/) as an intern, working on various domains of AI/ML to solve real retail problems. 
-- Writing backend for [frible](https://github.com/anirudw/frible-server.git) in go.
 
 ## Catalogue of my projects:
 
