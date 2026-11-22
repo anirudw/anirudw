@@ -1,4 +1,4 @@
-<sub>[visit my portfolio](https://portfolio.anirudhscodes.workers.dev/)</sub>
+[visit my website](https://portfolio.anirudhscodes.workers.dev/)
 
 # About me:
 
